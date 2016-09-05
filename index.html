@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operaciones Aritmeticas</title>
+	<meta>
+</head>
+<body>
+	<H1>Operaciones <br>Aritmeticas</H1>
+	<!-- Creacion del formulario de entradas y salidas -->
+	<form id="main">
+	<!-- Entrada del primer valor -->
+    <input type="number" id="val0" value="0">
+    <br>
+	<!-- Entrada del segundo valor -->
+    <input type="number" id="val1" value="0">
+    <br>
+    <!-- Entrada del operador botones +, -, /, * -->
+  	<input type="Button" id="sum" value=" + " onclick="calcula(0)">
+	<input type="Button" id="res" value=" - " onclick="calcula(1)">
+	<input type="Button" id="div" value=" * " onclick="calcula(2)">
+	<input type="Button" id="mul" value=" / " onclick="calcula(3)">
+    =
+    <!-- Salida del resultado de la operación -->
+    <output id="resultado" for="val0 val1">0</output>
+</form>
+	<!-- Metodo para operaciones basicas -->
+	<script type="text/javascript">
+		function calcula(valor)
+		{
+			//Obtener val0 y convertirlo a numerico
+			var v0 = parseInt(document.getElementById("val0").value);
+			//Obtener val1 y convertirlo a numerico
+			var v1 = parseInt(document.getElementById("val1").value);
+			var result = 0;
+			//Case de operaciones
+			switch(valor)
+			{
+				case 0: result = v0+v1;
+				break;
+				case 1: result = v0-v1;
+				break;
+				case 2: result= v0*v1;
+				break;
+				case 3: result = (v0/v1).toFixed(4);
+				break;
+				default: 
+				break;
+			}
+			document.getElementById("resultado").value = result;
+			//Enviar el result a resultado
+		}
+	</script>
+</body>
+</html>
